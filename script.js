@@ -14,6 +14,14 @@ var checkbox = {
   symbol: document.querySelector("#symbol"),
 }
 
+// Requires a length to be entered
+var passwordLength = document.querySelector("#length").required = true;
+
+if (passwordLength === true) {
+  
+} else {
+  alert("Please enter a number between 8 and 128")
+}
 
 // Don't need === true because it already evaluates to true or false
 if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
@@ -22,6 +30,19 @@ if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
     } else {
       alert("Please select one or more character types");
     }
+
+
+function generatePassword() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+  for (var i = 0; i < 5; i++)
+  text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+  }
+
+  console.log(generatePassword());
 
 
 // Assignment Code
