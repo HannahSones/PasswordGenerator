@@ -1,3 +1,20 @@
+// Characters required for password
+
+var characters = {
+  charUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  charLower: "abcdefghijklmnopqrstuvwxyz",
+  charNumber: "0123456789",
+  charSymbol: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+}
+
+var checkbox = {
+  upper: document.querySelector("#upper"),
+  lower: document.querySelector("#lower"),
+  number: document.querySelector("#number"),
+  symbol: document.querySelector("#symbol"),
+}
+
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
