@@ -15,6 +15,14 @@ var checkbox = {
 }
 
 
+// Don't need === true because it already evaluates to true or false
+if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
+    checkbox.number.checked === true || checkbox.symbol.checked === true) {
+       
+    } else {
+      alert("Please select one or more character types");
+    }
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
