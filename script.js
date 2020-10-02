@@ -15,33 +15,37 @@ var checkbox = {
 }
 
 
-
-// I need the results of this to depend on which boxes were ticked
+// I need the results of this function to depend on which checkboxes are selected
 function generatePassword() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
-
-  // text variable is going to equal (whichever box is checked, xpasswordLength, randomised)
   var passwordLength = document.getElementById("length").value;
     console.log("Selected password length is ", passwordLength);
   
-    if (passwordLength == "") {
+    // still giving a value despite prompt saying its an incorrect length
+    if (passwordLength < 8 || passwordLength > 128 || passwordLength == "") {
     alert("Please enter a number between 8 and 128.");
   }
 
   // Don't need === true because it already evaluates to true or false
-if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
+    if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
     checkbox.number.checked === true || checkbox.symbol.checked === true) {
+    console.log("Include uppercase characters ", upper.checked)
+    console.log("Include lowercase characters ", lower.checked)
+    console.log("Include numbers ", number.checked)
+    console.log("Include symbols ", symbol.checked)
+
+      // Add code in here to assign it to a checkbox
      
   } else {
     alert("Please select one or more character types");
   }
 
 
-  for (var i = 0; i < passwordLength; i++)
-  text += possible.charAt(Math.floor(Math.random() * passwordLength));
-
+  for (var i = 0; i < passwordLength; i++) {
+  text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
   return text;
   }
 
