@@ -19,16 +19,16 @@ function generatePassword() {
     symbol: document.querySelector("#symbol"),
   }
 
+  // ensuring password length is between 8 and 128
 
   var passwordLength = document.getElementById("length").value;
     console.log("Selected password length is ", passwordLength);
   
-    // still giving a value despite prompt saying its an incorrect length
     if (passwordLength < 8 || passwordLength > 128 || passwordLength == "") {
     alert("Please enter a number between 8 and 128.");
   }
 
-  // Don't need === true because it already evaluates to true or false
+  // recording which checkboxes are checked
     if (checkbox.upper.checked === true || checkbox.lower.checked === true ||
     checkbox.number.checked === true || checkbox.symbol.checked === true) {
     console.log("Include uppercase characters ", upper.checked)
