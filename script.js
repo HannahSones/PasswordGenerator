@@ -1,24 +1,24 @@
-// Characters required for password
 
-var characters = {
-  charUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  charLower: "abcdefghijklmnopqrstuvwxyz",
-  charNumber: "0123456789",
-  charSymbol: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
-}
+// function to generate the password based on the selected criteria
 
-var checkbox = {
-  upper: document.querySelector("#upper"),
-  lower: document.querySelector("#lower"),
-  number: document.querySelector("#number"),
-  symbol: document.querySelector("#symbol"),
-}
-
-
-// I need the results of this function to depend on which checkboxes are selected
 function generatePassword() {
   var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var possible = "";
+
+  var characters = {
+    charUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    charLower: "abcdefghijklmnopqrstuvwxyz",
+    charNumber: "0123456789",
+    charSymbol: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+  }
+  
+  var checkbox = {
+    upper: document.querySelector("#upper"),
+    lower: document.querySelector("#lower"),
+    number: document.querySelector("#number"),
+    symbol: document.querySelector("#symbol"),
+  }
+
 
   var passwordLength = document.getElementById("length").value;
     console.log("Selected password length is ", passwordLength);
@@ -36,10 +36,29 @@ function generatePassword() {
     console.log("Include numbers ", number.checked)
     console.log("Include symbols ", symbol.checked)
 
-      // Add code in here to assign it to a checkbox
-     
   } else {
     alert("Please select one or more character types");
+  }
+
+  
+  if (checkbox.upper.checked === true) {
+    possible += characters.charUpper
+    console.log("Use ", characters.charUpper)
+  }
+  
+  if (checkbox.lower.checked === true) {
+    possible += characters.charLower
+    console.log("Use ", characters.charLower)
+  }
+
+  if (checkbox.number.checked === true) {
+    possible += characters.charNumber
+    console.log("Use ", characters.charNumber)
+  }
+
+  if (checkbox.symbol.checked === true) {
+    possible += characters.charSymbol
+    console.log("Use ", characters.charSymbol)
   }
 
 
