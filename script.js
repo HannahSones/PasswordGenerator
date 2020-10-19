@@ -26,6 +26,7 @@ function generatePassword() {
   
     if (passwordLength < 8 || passwordLength > 128 || passwordLength == "") {
     alert("Please enter a number between 8 and 128.");
+      return "Invalid password type";
   }
 
   // recording which checkboxes are checked
