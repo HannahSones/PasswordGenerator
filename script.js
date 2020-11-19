@@ -12,7 +12,7 @@ function generatePassword() {
     charSymbol: "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
   }
   
-  var checkbox = {
+  const checkbox = {
     upper: document.querySelector("#upper"),
     lower: document.querySelector("#lower"),
     number: document.querySelector("#number"),
